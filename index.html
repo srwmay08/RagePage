@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="style.css">
+
+
+
+	<meta charset="UTF-8">
+	<title>Rage Page</title>
+</head>
+
+<body>
+	<div class="strip">
+		<div class="container martop">
+			<div class="row box">
+				<h1>Rage Page</h1>
+				<div class="plate form-group">
+					<input id="plate" pattern="[a-z-A-Z -]*" size="7.5" maxlength="8"></input>
+				</div>
+				<div class="buttons marbot">
+					<button type="submit" class="btn btn-default marbot">Search</button>
+				</div>
+				<div class="commentfield marbot">
+					<textarea onfocus="clearContents(this);" rows="10" cols="30">What did that scumbag do?</textarea>
+					<br>
+
+					<div class="star-rating">
+						<span class="fa fa-star-o" data-rating="1"></span>
+						<span class="fa fa-star-o" data-rating="2"></span>
+						<span class="fa fa-star-o" data-rating="3"></span>
+						<span class="fa fa-star-o" data-rating="4"></span>
+						<span class="fa fa-star-o" data-rating="5"></span>
+						<input type="hidden" name="whatever" class="rating-value" value="3">
+					</div>
+					<div class="buttons marbot">
+						<button type="submit" class="btn btn-default marbot">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script>
+		document.getElementById('plate').style.height = "60px";
+		document.getElementById('plate').style.fontSize = "20pt";
+
+		function clearContents(element) {
+			element.value = '';
+		}
+
+		var $star_rating = $('.star-rating .fa');
+
+		var SetRatingStar = function () {
+			return $star_rating.each(function () {
+				if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+					return $(this).removeClass('fa-star-o').addClass('fa-star');
+				} else {
+					return $(this).removeClass('fa-star').addClass('fa-star-o');
+				}
+			});
+		};
+
+		$star_rating.on('click', function () {
+			$star_rating.siblings('input.rating-value').val($(this).data('rating'));
+			return SetRatingStar();
+		});
+
+		SetRatingStar();
+	</script>
+</body>
+
+</html>

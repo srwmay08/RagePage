@@ -1,0 +1,47 @@
+body {
+	font-family: 'Shadows Into Light', cursive; 
+}
+
+.martop {
+	margin-top: 5%;
+}
+
+.marbot {
+	margin-bottom: 5%;
+}
+
+.row {
+	text-align: center;
+	align-content: center;
+	margin-top: 20%;
+}
+
+.box {
+	height: auto;
+	background-color: indianred;
+	width: 25%;
+	margin: auto;
+}
+
+.strip {
+	width: 100%;
+	background-image: url(http://img.ccrd.clearchannel.com/media/mlib/668/2015/08/default/i_25_sb_app_58th_traffic_backe_0_1440588801.jpg);
+}
+
+#plate {
+	margin: 2%;
+	height: 60%;
+	width: 55%;
+	font-family: sans-serif;
+}
+
+.buttons {
+	display: inline;
+	align-content: center;
+}
+
+.star-rating {
+  line-height:32px;
+  font-size:1.25em;
+  cursor: pointer;
+}
